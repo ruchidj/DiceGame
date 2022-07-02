@@ -71,32 +71,38 @@ if (isset($_POST["signup"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
-    <title>Project 1</title>
+    <title>Snakes & Ladders </title>
   </head>
+
   <body>
+    <main>
+
     <div id="leaderboard">
       <h1 id="leader_title">Leaderboard</h1>
-      <span id="large"><span id="small">User1</span> 20</span>
-      <span id="large"><span id="small">User2</span> 23</span>
-      <span id="large"><span id="small">User3</span> 27</span>
-      
+      <table>
+        <tr>
+          <th>Username</th>
+          <th>Best Score</th>
+        </tr>
       <?php // * Change to leaderboard db for production!
 
 if (isset($_SESSION["user_database"])) {
         foreach ($_SESSION["user_database"] as $key => $value) {
-          echo "<span>$key </span>";
+          echo "<tr><td>$key</td><td>$value</td></<tr>";
         }
+      } else {
+        echo "<span class='signup_warning'>If this is your first time playing with us, be sure to enter a username & password you can remember. Then press 'Sign-Up!'</span>";
       } ?>
+      </table>
     </div>
 
-
-    <form id="inputs" method="post">
-      <input type="text" placeholder="@username" name="username"  />
-      <input type="text"  placeholder="password" name="password"  />
-      <input type="submit" name="login_button" value="Login"></input>
-      <input type="submit" name="signup" value="Sign-Up" />
+    <form id="input_form" method="post" autocomplete="off">
+      <input  id="username_input" type="text" placeholder="@username" name="username"  />
+      <input id="password_input" type="text"  placeholder="Password" name="password"  />
+      <input id="login" type="submit" name="login_button" value="Login"></input>
+      <input id="signup" type="submit" name="signup" value="Sign-Up" />
     </form>
 
-    </div>
+    </main>
   </body>
 </html>

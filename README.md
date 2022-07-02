@@ -1,8 +1,10 @@
-# WP--Project1--DiceGame
+# POPULAR DICE GAME
 
-## This a game where users can virtually role a dice to determine the ammount of spaces to move forward. The users score is determined off of the total number of "moves" accrued from the rolling of said dice.
+###(WP-Project 1)
 
-### Khalfani's Agenda:
+#### This a game where users can roll a virtual dice to determine the ammount of spaces to move forward. The users score is determined off of the total number of "moves" accrued from rolling the before mentioned dice.
+
+## Khalfani's Agenda:
 
 - ~~Verify this idea falls into the category of "popular dice games" with the instructor~~
 - ~~Create figma model of project~~
@@ -12,8 +14,9 @@
 - ~~make database in session storage for {username, passwords} and for {username, bestscore}~~
   ~~https://youtu.be/0vshwYT7xUE~~
 
-- Improve visual aspect of login page
+- ~~Improve visual aspect of login page~~
+  ~~https://youtu.be/JplnuNFZ9CE~~
 
-- make the leaderboard functional (waiting for game to playable enough to collect a point)
+- make the leaderboard functional (waiting for game to playable enough to collect points)
 
 - make youtube video based on the powerpoint (waiting for powerpoint)
