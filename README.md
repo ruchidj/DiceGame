@@ -1,6 +1,6 @@
 # POPULAR DICE GAME
 
-###(WP-Project 1)
+### (WP-Project 1)
 
 #### This a game where users can roll a virtual dice to determine the ammount of spaces to move forward. The users score is determined off of the total number of "moves" accrued from rolling the before mentioned dice.
 
@@ -16,7 +16,7 @@
 
 - ~~Improve visual aspect of login page~~
   ~~https://youtu.be/JplnuNFZ9CE~~
+  <img src="current_login.webp">
+- Make powerpoint with required features so that Ruchitha can make youtube presentation with it
 
 - make the leaderboard functional (waiting for game to playable enough to collect points)
-
-- make youtube video based on the powerpoint (waiting for powerpoint)
