@@ -24,7 +24,7 @@ function signup()
   // Prevent permenant login
   unset($_POST);
   // Navigate to game board
-  header("Location: ./state.php");
+  header("Location: ./game.php");
 }
 
 // Login function
@@ -44,7 +44,7 @@ function login()
     if ($local_flag == 1) {
       unset($_POST);
       // Navigate to the game board
-      header("Location: ./state.php");
+      header("Location: ./game.php");
       // Kill Script
     } else {
       // Username or password is incorrect
