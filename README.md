@@ -8,15 +8,17 @@
 
 - ~~Verify this idea falls into the category of "popular dice games" with the instructor~~
 - ~~Create figma model of project~~
-  ~~<img src="login_model.webp">~~
-  ~~<img src="gameboard.webp">~~
+  ~~<img src="./images/login_model.webp">~~
+  ~~<img src="./images/gameboard.webp">~~
 
 - ~~make database in session storage for {username, passwords} and for {username, bestscore}~~
   ~~https://youtu.be/0vshwYT7xUE~~
 
 - ~~Improve visual aspect of login page~~
   ~~https://youtu.be/JplnuNFZ9CE~~
-  <img src="current_login.webp">
+  <img src="./images/current_login.webp">
+- ~~make the leaderboard functional (waiting for game to playable enough to collect points)~~
+  <img src="./images/6July.webp">
 - Make powerpoint with required features so that Ruchitha can make youtube presentation with it
 
-- make the leaderboard functional (waiting for game to playable enough to collect points)
+

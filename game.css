@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "lob";
+    src: url("./LobsterTwo-BoldItalic.ttf");
+  }
 .rbox{
     background-color: red;
     border: 2px green;
@@ -8,10 +12,14 @@
 
 .cbox{
     background-color: blue;
+    color:white;
     border: 2px green;
     width:2rem;
     height:2rem;
-    margin: 1rem;;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .gbox{
@@ -31,8 +39,78 @@
 }
 
 
-.gameboard{
-    display: flex;
-    justify-content: center;
 
+body{
+    height:90%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("./images/gameboard_background.webp");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    overflow-x: hidden;
 }
+div#header{
+    height: auto;
+    width: auto;
+    margin: 1%;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: black;
+    font-family: "lob";
+    text-align: center;
+    line-height: 110%;
+    letter-spacing: 1px;
+}
+div#header > span{
+    font-family: "lob";
+    font-size: 120%;
+    text-decoration: underline;
+    margin: 2% 0 -5% 0;
+}
+div#header > h1 {
+    font-size: 300%;
+}
+.gameboard{
+    height:auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    margin: 10% 0 0 0;
+    padding:0;
+    background-color: #444;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: black;
+}
+img#dice{
+    height:60%;
+    width:50%;
+}
+form{
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input[type='submit']{
+    border-radius: 10px;
+    width: 50%;
+    height: 100%;
+    background-color: #34d283;
+    font-family: "lob";
+    letter-spacing: 1px;
+    font-size: 130%;
+}
+
+

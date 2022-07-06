@@ -8,7 +8,7 @@ body {
   width: auto;
   margin: 0;
   padding: 0;
-  background-image: url("gameboard_background.webp");
+  background-image: url("./images/gameboard_background.webp");
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */

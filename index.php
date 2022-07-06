@@ -4,13 +4,16 @@ session_cache_limiter("private_no_expire");
 
 // Start the session
 session_start();
-
+$_SESSION["currentValue"]= 0;
+$_SESSION["total_value"] = 0;
+$_SESSION["total_moves"] = 10;
+//setcookie("VALIDATED","true",time()+3600);
 // Sign-up function
 function signup()
 {
   // Set current logged in username
   $_SESSION["username"] = $_POST["username"];
-
+ 
   // Add newly logged in user to the database
   if (isset($_SESSION["user_database"])) {
     $_SESSION["user_database"] += [
@@ -21,6 +24,13 @@ function signup()
       $_SESSION["username"] => $_POST["password"],
     ];
   }
+  if(isset( $_SESSION['leaderboard'])){
+    $_SESSION['leaderboard'] += [$_POST["username"]=>0];
+  }
+  else{
+    $_SESSION['leaderboard'] = [$_POST["username"]=>0];
+  }
+  
   // Prevent permenant login
   unset($_POST);
   // Navigate to game board
@@ -30,6 +40,7 @@ function signup()
 // Login function
 function login()
 {
+
   if (isset($_SESSION["user_database"])) {
     $local_flag = 0;
     // Set current logged in username
@@ -85,9 +96,8 @@ if (isset($_POST["signup"])) {
           <th>Best Score</th>
         </tr>
       <?php // * Change to leaderboard db for production!
-
-if (isset($_SESSION["user_database"])) {
-        foreach ($_SESSION["user_database"] as $key => $value) {
+      if (isset($_SESSION["leaderboard"])) {
+        foreach ($_SESSION["leaderboard"] as $key => $value) {
           echo "<tr><td>$key</td><td>$value</td></<tr>";
         }
       } else {
