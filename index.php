@@ -102,7 +102,7 @@ if (isset($_SESSION["user_database"])) {
       <input id="login" type="submit" name="login_button" value="Login"></input>
       <input id="signup" type="submit" name="signup" value="Sign-Up" />
     </form>
-
+    <a href="summary.html"> About Us </a>
     </main>
   </body>
 </html>

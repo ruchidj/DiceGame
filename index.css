@@ -117,19 +117,22 @@ input#signup {
   font-weight: bolder;
   font-size: 120%;
 }
-
+a{
+  color:black;
+}
 /* Project Summary */
 
 div#summary{
   height: 100vh;
   width: auto;
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 div#summary_container{
-  height:70%;
+  height:90%;
   margin: 5%;
   padding:2%;
   background-image: linear-gradient(#757b78, white);
