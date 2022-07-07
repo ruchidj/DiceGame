@@ -8,7 +8,7 @@ body {
   width: auto;
   margin: 0;
   padding: 0;
-  background-image: url("gameboard_background.webp");
+  background-image: url("./images/gameboard_background.webp");
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
@@ -116,4 +116,45 @@ input#signup {
   text-decoration: underline;
   font-weight: bolder;
   font-size: 120%;
+}
+a{
+  color:black;
+}
+/* Project Summary */
+
+div#summary{
+  height: 100vh;
+  width: auto;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+div#summary_container{
+  height:90%;
+  margin: 5%;
+  padding:2%;
+  background-image: linear-gradient(#757b78, white);
+  display: flex;
+  flex:1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border-style: solid;
+  text-align: center;
+  line-height: 130%;
+}
+div#summary_container > h1{
+  font-family: "lob";
+  letter-spacing: 2px;
+  text-decoration: underline;
+}
+div#summary_container > h3{
+  margin:5% 0 0% 0;
+}
+span.summary_req{
+  font-weight: bold;
+  text-decoration: underline;
 }
