@@ -19,6 +19,7 @@
   <img src="./images/current_login.webp">
 - ~~make the leaderboard functional (waiting for game to playable enough to collect points)~~
   <img src="./images/6July.webp">
-- Make powerpoint with required features so that Ruchitha can make youtube presentation with it
+- ~~Make powerpoint with required features so that Ruchitha can make youtube presentation with it~~
+https://docs.google.com/presentation/d/13Fzw2C8OdEkJixIP_EJCwKRubnrHJi6HJyYmdRxGh4M/edit?usp=sharing
 
 
