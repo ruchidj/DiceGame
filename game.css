@@ -41,7 +41,7 @@
 
 
 body{
-    height:90%;
+    height:110vh;
     width: auto;
     display: flex;
     flex-direction: column;
@@ -78,14 +78,41 @@ div#header > span{
 div#header > h1 {
     font-size: 300%;
 }
-.gameboard{
+.gameboard1{
     height:auto;
     width: auto;
     display: flex;
     flex-direction: row;
-    margin: 10% 0 0 0;
+    align-items: center;
+    margin: 5% 0 0 0;
     padding:0;
     background-color: #444;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: black;
+}
+.gameboard2{
+    height:auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 5% 0 0 0;
+    padding:0;
+    background-color:rgb(178, 251, 226);
+    border-style: solid;
+    border-radius: 10px;
+    border-color: black;
+}
+.gameboard3{
+    height:auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 5% 0 0 0;
+    padding:0;
+    background-color: aquamarine;
     border-style: solid;
     border-radius: 10px;
     border-color: black;
@@ -112,5 +139,21 @@ input[type='submit']{
     letter-spacing: 1px;
     font-size: 130%;
 }
-
+div#completed_game{
+    width:90%;
+    height:fit-content;
+    display: flex;
+    align-items: center;
+    padding: -2% 0 0 0;
+    flex-direction: column;
+    background-color: #34d283;
+    color:black;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: black;
+    font-family: "lob";
+    text-align: center;
+    line-height: 110%;
+    letter-spacing: 1px;
+}
 
