@@ -1,24 +1,20 @@
 <?php
-header("Cache-Control: no cache");
-session_cache_limiter("private_no_expire");
-
 // Start the session
 session_start();
 // Initialize gameboard / leaderboard variables for use in the game.php
-$_SESSION["currentValue"]= 0;
+$_SESSION["current_value"]= 0;
 $_SESSION["total_value"] = 0;
-$_SESSION["total_moves"] = 10;
-$_SESSION["current_level"] = 1;
-$_SESSION["level_multiplier"] = [1, .5, .3];
-$_SESSION["level_limits"] = [30, 10, 3];
-//setcookie("VALIDATED","true",time()+3600);
+$_SESSION["total_moves"] = 10; // 10 Total moves per level
+$_SESSION["current_level"] = 1; // Starting level of 3
+$_SESSION["level_multiplier"] = [1, .5, .3]; // Roll : Point ratio per level
+$_SESSION["level_limits"] = [30, 10, 3]; // Limit of points per level to advance
+
 // Sign-up function
 function signup()
 {
   // Set current logged in username
   $_SESSION["username"] = $_POST["username"];
- 
-  // Add newly logged in user to the database
+  // Add newly signedup/logged in user to the database
   if (isset($_SESSION["user_database"])) {
     $_SESSION["user_database"] += [
       $_SESSION["username"] => $_POST["password"],
@@ -28,6 +24,7 @@ function signup()
       $_SESSION["username"] => $_POST["password"],
     ];
   }
+  // Add newly signedup/logged in user to the leaderboard
   if(isset( $_SESSION['leaderboard'])){
     $_SESSION['leaderboard'] += [$_POST["username"]=>1000];
   }
@@ -36,37 +33,42 @@ function signup()
   }
   // Prevent permenant login
   unset($_POST);
+  // Set cookie 30 minutes
+  setcookie("VALIDATED","true",time()+1800); 
   // Navigate to game board
   header("Location: ./game.php");
+  exit();
 }
 
 // Login function
 function login()
 {
-
   if (isset($_SESSION["user_database"])) {
-    $local_flag = 0;
+    $user_exists = false;
     // Set current logged in username
     $_SESSION["username"] = $_POST["username"];
     foreach ($_SESSION["user_database"] as $key => $value) {
-      if ($key == $_SESSION["username"] && $value == $_POST["password"]) {
-        $local_flag = 1;
+      // Ignore case for password!
+      if ($key == $_SESSION["username"] && strtolower($value) == strtolower($_POST["password"])) {
+        $user_exists = true;
         break;
       }
     }
-    // If the username and password are prest and correct...
-    if ($local_flag == 1) {
+    // If the username and password are present & correct...
+    if ($user_exists) {
       unset($_POST);
-      // Navigate to the game board
-      header("Location: ./game.php");
-      // Kill Script
-    } else {
-      // Username or password is incorrect
-      echo "<h1>Username and password dont match, are you sure you signed up?</h1>";
+      setcookie("VALIDATED","true",time()+1800); // Set cookie 30 minutes
+      header("Location: ./game.php"); // Navigate to the game board
+      exit();
+    } else { // Username or password is incorrect (show warning)
+      echo "<h3 id=\"warning\">Username and password dont match, are you sure you signed up?</h3>";
+      echo "<a href=\"./index.php\">Click Here to try again</a>";
+      exit();
     }
-  } else {
+  } else { // Not one user has signed up (show warning)
     echo "<h1>You are not signed up!</h1>";
-    return; // If there is no data base initialized, no one has signed up
+    echo "<a href=\"./index.php\">Click Here to try again</a>";
+    exit(); 
   }
 }
 // Login listener
@@ -82,15 +84,12 @@ if (isset($_POST["signup"])) {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
-    <title>Snakes & Ladders </title>
+    <title>Roll & Run</title>
   </head>
-
   <body>
     <main>
-
     <div id="leaderboard">
       <h1 id="leader_title">Leaderboard</h1>
       <table>
@@ -98,9 +97,14 @@ if (isset($_POST["signup"])) {
           <th>Username</th>
           <th>Best Score</th>
         </tr>
-      <?php // * Change to leaderboard db for production!
+      <?php 
       if (isset($_SESSION["leaderboard"])) {
-        foreach ($_SESSION["leaderboard"] as $key => $value) {
+        $sorted = [];
+        foreach($_SESSION["leaderboard"] as $key => $value){
+          $sorted += [$key => $value];
+          asort($sorted);
+        }
+        foreach ($sorted as $key => $value) {
           echo "<tr><td>$key</td><td>$value</td></<tr>";
         }
       } else {
@@ -115,11 +119,11 @@ if (isset($_POST["signup"])) {
 
     <form id="input_form" method="post" autocomplete="off">
       <input  id="username_input" type="text" placeholder="@username" name="username"  />
-      <input id="password_input" type="text"  placeholder="Password" name="password"  />
+      <input id="password_input" type="password"  placeholder="Password" name="password"  />
       <input id="login" type="submit" name="login_button" value="Login"></input>
       <input id="signup" type="submit" name="signup" value="Sign-Up" />
     </form>
-    <a href="summary.html"> About Us </a>
+    <a id="summary" href="summary.html"> How to play </a>
     </main>
   </body>
 </html>
