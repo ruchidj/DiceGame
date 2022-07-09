@@ -2,8 +2,10 @@
   font-family: "lob";
   src: url("./LobsterTwo-BoldItalic.ttf");
 }
+html{
+  background-color: #444;
+}
 body {
-  height: 100%;
   min-height: 100vh;
   width: auto;
   margin: 0;
@@ -15,7 +17,13 @@ body {
   overflow-x: hidden;
   font-family: sans-serif;
 }
+h3#warning{
+  color:red;
+  background-color: black;
+  text-align: center;
+}
 main {
+  height:100%;
   width: auto;
   display: flex;
   flex-direction: column;
@@ -107,7 +115,7 @@ input#signup {
   height: 15%;
   width: 100%;
   padding: 0 0 5% 0;
-  margin: -1% 0 0 0;
+  margin: -1% 0 -5% 0;
   background-color: transparent;
   outline: none;
   border-width: 0;
@@ -115,10 +123,14 @@ input#signup {
   cursor: pointer;
   text-decoration: underline;
   font-weight: bolder;
-  font-size: 120%;
+  font-size: 130%;
 }
 a{
   color:black;
+}
+a#summary{
+  color:black;
+  padding:1%;
 }
 /* Project Summary */
 
@@ -132,19 +144,15 @@ div#summary{
   justify-content: center;
 }
 div#summary_container{
-  height:90%;
+  height:80%;
   margin: 5%;
   padding:2%;
   background-image: linear-gradient(#757b78, white);
-  display: flex;
-  flex:1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   border-radius: 10px;
   border-style: solid;
   text-align: center;
   line-height: 130%;
+  overflow-y:scroll;
 }
 div#summary_container > h1{
   font-family: "lob";
@@ -152,7 +160,17 @@ div#summary_container > h1{
   text-decoration: underline;
 }
 div#summary_container > h3{
-  margin:5% 0 0% 0;
+  margin: 1% 0 0 0;
+  font-weight: 400;
+}
+div#summary_container >p {
+  margin: 0 0 1% 0;
+  padding: 0 15% 0 15%;
+
+}
+div#summary_container > ul{
+  list-style-type: none;
+  margin-left: -6%;
 }
 span.summary_req{
   font-weight: bold;

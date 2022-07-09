@@ -2,6 +2,16 @@
     font-family: "lob";
     src: url("./LobsterTwo-BoldItalic.ttf");
   }
+@keyframes spin_die { 
+    from{transform: rotate(0deg); opacity: 0;width:0;height:0;}
+    to{transform: rotate(360deg); opacity: 0.8;}
+}
+@keyframes roll_button { 
+    from{opacity: 0;width:40%;height:0;}
+}
+html{
+    background-color: #444;
+}
 .rbox{
     background-color: red;
     border: 2px green;
@@ -9,7 +19,6 @@
     height:2rem;
     margin: 1rem;
 }
-
 .cbox{
     background-color: blue;
     color:white;
@@ -21,7 +30,6 @@
     align-items: center;
     justify-content: center;
 }
-
 .gbox{
     background-color: green;
     border: 2px green;
@@ -29,23 +37,24 @@
     height:2rem;
     margin: 1rem;;
 }
-
 .ybox{
     background-color: yellow;
     border: 2px green;
     width:2rem;
     height:2rem;
-    margin: 1rem;;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "lob";
 }
-
-
-
 body{
-    height:110vh;
+    height:100vh;
     width: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-image: url("./images/gameboard_background.webp");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
@@ -120,6 +129,8 @@ div#header > h1 {
 img#dice{
     height:60%;
     width:50%;
+    animation: spin_die 2s backwards;
+    margin:1%;
 }
 form{
     align-self: center;
@@ -138,6 +149,13 @@ input[type='submit']{
     font-family: "lob";
     letter-spacing: 1px;
     font-size: 130%;
+    opacity: 1;
+    animation: roll_button 1s backwards;
+}
+input[type='submit']:active{
+    background-color: white;
+    border-color:#444;
+    font-size: 220%;
 }
 div#completed_game{
     width:90%;
