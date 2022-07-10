@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
 @font-face {
     font-family: "lob";
     src: url("./LobsterTwo-BoldItalic.ttf");
@@ -9,9 +15,7 @@
 @keyframes roll_button { 
     from{opacity: 0;width:40%;height:0;}
 }
-html{
-    background-color: #444;
-}
+
 .rbox{
     background-color: red;
     border: 2px green;
@@ -49,7 +53,6 @@ html{
     font-family: "lob";
 }
 body{
-    height:100vh;
     width: auto;
     display: flex;
     flex-direction: column;
@@ -58,14 +61,13 @@ body{
     background-image: url("./images/gameboard_background.webp");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+    background-size: cover;/* Resize the background image to cover the entire container */
+    background-attachment: fixed;
     overflow-x: hidden;
 }
 div#header{
-    height: auto;
-    width: auto;
-    margin: 1%;
-    padding: 1%;
+    margin-top: 2rem;
+    padding: 0.8rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,14 +77,12 @@ div#header{
     border-color: black;
     font-family: "lob";
     text-align: center;
-    line-height: 110%;
     letter-spacing: 1px;
 }
 div#header > span{
     font-family: "lob";
     font-size: 120%;
     text-decoration: underline;
-    margin: 2% 0 -5% 0;
 }
 div#header > h1 {
     font-size: 300%;
@@ -106,7 +106,7 @@ div#header > h1 {
     display: flex;
     align-items: center;
     flex-direction: row;
-    margin: 5% 0 0 0;
+    margin-top:0.5rem;
     padding:0;
     background-color:rgb(178, 251, 226);
     border-style: solid;
@@ -127,10 +127,7 @@ div#header > h1 {
     border-color: black;
 }
 img#dice{
-    height:60%;
-    width:50%;
     animation: spin_die 2s backwards;
-    margin:1%;
 }
 form{
     align-self: center;
@@ -158,11 +155,11 @@ input[type='submit']:active{
     font-size: 220%;
 }
 div#completed_game{
-    width:90%;
+    margin-top: 0.2rem;
+    width:80%;
     height:fit-content;
     display: flex;
     align-items: center;
-    padding: -2% 0 0 0;
     flex-direction: column;
     background-color: #34d283;
     color:black;
@@ -171,7 +168,9 @@ div#completed_game{
     border-color: black;
     font-family: "lob";
     text-align: center;
-    line-height: 110%;
     letter-spacing: 1px;
 }
 
+div#completed_game > h3{
+    margin: 0.5rem;
+}

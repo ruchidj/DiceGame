@@ -51,8 +51,8 @@ function move_user($dice_value, $current_level, $level_multiplier){
     <div id='header'>
     <h1>Roll & Run </h1>
     <span >Level $current_level</span><br>
-    <img id=dice src=\"./images/$dice_value.png\"<br>
-    <span id='score'>Total score:</span> <br>";
+    <img id=dice src=\"./images/$dice_value.png\"><br>
+    <span id='score'>Total score:</span>";
     echo $_SESSION["total_value"];
     echo nl2br("\n\nScore Limit: ");
     echo $_SESSION["level_limits"][$current_level-1]; 
